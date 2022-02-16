@@ -29,8 +29,8 @@
           state: present
        register: igw
 
-      - name: Tagging the new internet gateway created
-        ec2_tag:
+     - name: Tagging the new internet gateway created
+       ec2_tag:
           resource: "{{ igw.gateway_id }}"
           state: present
           region: us-east-1
