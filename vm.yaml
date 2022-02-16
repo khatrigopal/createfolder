@@ -1,25 +1,13 @@
 ---
-- name: To set up internet gateway
+- name: VPC Creation
   hosts: all
+  become: yes
   tasks:
-   - name: Create VPC and Subnet
-     ec2_vpc:
-         state: present
-         region: us-east-1
-         cidr_block: 20.0.0.0/16
-         subnets:
-           - cidr: 20.0.0.0/16
-             resource_tags: {"Name":"Test Subnet"}
-         route_tables:
-           - subnets:
-             - 20.0.0.0/16
-             routes:
-               - dest: 0.0.0.0/0
-                 gw: igw
-         wait: yes
-         internet_gateway: yes
-         resource_tags:
-           Name: "Test VPC"
-     register: vpc
-       
-    
+  - name: VPC Creation
+   amazon.aws.ec2_vpc_net:
+    name: Module_dev2
+    cidr_block: 10.10.0.0/16
+    region: us-east-1
+    tags:
+      module: ec2_vpc_net
+      this: works
