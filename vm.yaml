@@ -4,7 +4,7 @@
   become: yes
   tasks:
   - name: VPC Creation
-    amazon.aws.ec2_vpc_net:
+    ec2_vpc:
       name: Module_dev2
       cidr_block: 10.10.0.0/16
       region: us-east-1
