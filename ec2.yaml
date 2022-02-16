@@ -8,6 +8,6 @@
     ec2_vol:
      instance: i-0c022e936de6568d2
      region: us-east-1
-     volume_size: "10"
+     volume_size: 10
      volume_type: gp2
      device_name: /dev/xvdf
