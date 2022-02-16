@@ -23,7 +23,7 @@
        register: vpc
 
      - name: get igw
-        ec2_vpc_igw:
+       ec2_vpc_igw:
           vpc_id: "{{ vpc.vpc_id }}"
           region: us-east-1
           state: present
