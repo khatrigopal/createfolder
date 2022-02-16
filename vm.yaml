@@ -27,7 +27,7 @@
           vpc_id: "{{ vpc.vpc_id }}"
           region: us-east-1
           state: present
-        register: igw
+       register: igw
 
       - name: Tagging the new internet gateway created
         ec2_tag:
