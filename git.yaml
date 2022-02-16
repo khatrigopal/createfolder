@@ -1,0 +1,9 @@
+---
+- name: Git Creation
+  hosts: all
+  become: yes
+  tasks:
+  - name: Clone Git Repo
+    git:
+     repo: https://github.com/cloudtechmasters/springboot-azure-demo-project.git
+     dest: /code/springboot
