@@ -4,7 +4,7 @@
   become: yes
   tasks:
   - name: Install apache packages
-    dnf:
+    yum:
       name: httpd
       state: present
   - name: ensure httpd is running
