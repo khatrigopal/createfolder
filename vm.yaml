@@ -1,7 +1,7 @@
 ---
 - name: To set up internet gateway
   hosts: all
-   tasks:
+  tasks:
      - name: Create VPC and Subnet
        ec2_vpc:
          state: present
